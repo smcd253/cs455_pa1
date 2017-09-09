@@ -17,6 +17,9 @@
  * Invariant: getNumTrials() = getTwoHeads() + getTwoTails() + getHeadTails()
  * 
  */
+
+ import java.util.Scanner;
+
 public class CoinTossSimulator {
 
 
@@ -35,8 +38,14 @@ public class CoinTossSimulator {
       
       @param numTrials  number of trials to for simulation; must be >= 1
     */
+    int numTrials = 0;
    public void run(int numTrials) {
- 
+    //    Scanner in = new Scanner(System.in);
+
+    //    System.out.print("Enter number of trials: ");
+    //    numTrials = in.nextInt();
+    //    this.numTrials = numTrials;
+
    }
 
 
@@ -44,7 +53,7 @@ public class CoinTossSimulator {
       Get number of trials performed since last reset.
    */
    public int getNumTrials() {
-       return 0; // DUMMY CODE TO GET IT TO COMPILE
+       return this.numTrials; // DUMMY CODE TO GET IT TO COMPILE
    }
 
 
