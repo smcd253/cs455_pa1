@@ -18,8 +18,8 @@ public class CoinTossSimulatorTester
         System.out.println(sim.getTwoTails());
         System.out.print("One-head one-tail tosses: ");
         System.out.println(sim.getHeadTails());        
-        System.out.print("Tosses add up correctly?");
+        System.out.print("Tosses add up correctly? ");
+        System.out.println(sim.tossesAdd());
         System.out.println();                        
-        
     }
 }

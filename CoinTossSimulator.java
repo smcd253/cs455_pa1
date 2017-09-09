@@ -79,4 +79,13 @@ public class CoinTossSimulator {
 
    }
 
+   public boolean tossesAdd()
+   {
+       if(this.getTwoHeads() + this.getTwoTails() + this.getHeadTails() == this.getNumTrials())
+       {
+           return true;
+       }
+       else return false;
+   }
+
 }
