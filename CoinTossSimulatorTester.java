@@ -10,5 +10,8 @@ public class CoinTossSimulatorTester
         System.out.print("Number of Trials [exp: 0]: ");
         System.out.println(sim.getNumTrials());
         System.out.println();
+
+        System.out.print("FUUUCKKK");
+        System.out.println();
     }
 }
