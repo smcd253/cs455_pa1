@@ -1,5 +1,5 @@
-// Name:
-// USC NetID:
+// Name: Spencer McDonough
+// USC NetID: 6341617166
 // CS 455 PA1
 // Fall 2017
 
