@@ -28,6 +28,22 @@ CoinTossSimulator.java
 
     Source: Big Java Early Objects, 6th ed., Section 6.9
 
+CoinSimViewer.java
+   7: JFrame frame = new JFrame();
+
+   9: final int FRAME_WIDTH = 300;
+   10: final int FRAME_HEIGHT = 400;
+
+   11: frame.setSize(FRAME_WIDTH, FRAME_HEIGHT);
+   12: frame.setTitle("BarChart");
+   13: frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+   15: CoinSimComponent component = new CoinSimComponent();
+   16: frame.add(component);
+
+   19: frame.setVisible(true);
+
+   Source: Big Java Early Objects, 6th ed., Section 2.9.1
 ----------------------------------------------
 KNOWN BUGS or LIMITATIONS:
 
