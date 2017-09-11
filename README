@@ -15,16 +15,10 @@ other students in the course."
 
 Initial below to "sign" the above statement:
 
+SM 
 
 ----------------------------------------------
 ACKNOWLEDGE ANY OUTSIDE SOURCES
-
-List here any code you submitted for this assignment that was written
-with significant help of a course staff member, or code used from the
-textbook.  Be specific about what methods or algorithms are involved,
-and what sections of the textbook are involved (if applicable): [you do
-not need to list any of the code that we wrote for the assignment,
-i.e., the contents of the starter files for the assignment]
 
 CoinTossSimulator.java 
     53: Random rand = new Random();
@@ -32,7 +26,8 @@ CoinTossSimulator.java
     55: int coinTossA = rand.nextInt(2);
     56: int coinTossB = rand.nextInt(2);
 
-    Source: https://stackoverflow.com/questions/5887709/getting-random-numbers-in-java
+    Source: Big Java Early Objects, 6th ed., Section 6.9
+
 ----------------------------------------------
 KNOWN BUGS or LIMITATIONS:
 

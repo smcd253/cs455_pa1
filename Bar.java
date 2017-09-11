@@ -24,7 +24,15 @@ import java.awt.geom.Rectangle2D;
  */
 public class Bar {
    
-
+    // member variables
+    private int bottom;
+    private int left;
+    private int width;
+    private int barHeight;
+    private double scale;
+    private Color color;
+    private String label;
+    private ArrayList<double> data;
 
    /**
       Creates a labeled bar.  You give the height of the bar in application
@@ -39,16 +47,52 @@ public class Bar {
       @param color  the color of the bar
       @param label  the label at the bottom of the bar
    */
-   public Bar(int bottom, int left, int width, int barHeight,
-              double scale, Color color, String label) {
-
-   }
+    public Bar(int bottom, int left, int width, int barHeight,
+                double scale, Color color, String label) {
+           this.bottom = bottom;
+           this.left = left;
+           this.width = width;
+           this.barHeight = barHeight;
+           this.scale = scale;
+           this.color = color;
+           this.label = label;             
+           this.data = new ArrayList<double>();         
+    }
    
+   // add value to bar data set
+//    public void addToBarData(double in)
+//    {
+//        this.data.add(in);
+//    }
    /**
       Draw the labeled bar. 
       @param g2  the graphics context
    */
-   public void draw(Graphics2D g2) {
+    public void draw(Graphics2D g2) {
+        // int i = 0;
+        // double max = 0;
 
-   }
+        // for (Double findMax : this.data)
+        //     if(max < findMax)
+        //     max = findMax;
+
+        // int xwidth = width - 1;
+        // int yheight = height - 1;
+
+        // int xleft = 0;
+
+        // for (i = 0; i < this.data.size(); i++)
+        // {
+        //     int xright = xwidth * (i + 1) / this.data.size();
+        //     int barWidth = xwidth / this.data.size();
+        //     int barHeight = (int) Math.round(yheight * this.data.get(i) / max);
+
+        //     Rectangle bar =
+        //     new Rectangle(xleft, yheight - barHeight,
+        //         barWidth, barHeight);
+        //     g2.draw(bar);
+
+        //     xleft = xright;
+        // }
+    }
 }

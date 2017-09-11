@@ -103,5 +103,8 @@ public class CoinTossSimulatorTester
         System.out.print("Tosses add up correctly? ");
         System.out.println(sim.tossesAdd());
         System.out.println();
+
+        // test bar graph
+        
     }
 }

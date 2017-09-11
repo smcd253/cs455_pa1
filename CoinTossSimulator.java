@@ -44,22 +44,26 @@ public class CoinTossSimulator {
     */
 
     public void run(int numTrials) {
+        // add internal numTrials variable to object numTrials (Total)
         this.numTrials += numTrials;
 
+        // generate two random coin tosses per trial
         for (int i = 0; i < numTrials; i++)
         {
-            Random rand = new Random();
+            Random randToss = new Random();
 
-            int coinTossA = rand.nextInt(2);
-            int coinTossB = rand.nextInt(2);
+            int coinTossA = randToss.nextInt(2);
+            int coinTossB = randToss.nextInt(2);
             
             if (coinTossA == 0 && coinTossB == 0)
                 this.numTwoHeads++;
             else if (coinTossA == 1 && coinTossB == 1)
                 this.numTwoTails++;
-            else
+            else // two cases where either can be heads while the other is tails
                 this.numHeadsTails++;
         } 
+
+        // call bar stuff
     }
 
 
