@@ -24,10 +24,10 @@
 public class CoinTossSimulator {
 
     // member variables
-    private int numTwoHeads;
-    private int numTwoTails;
-    private int numHeadTails;
-
+    private int numTwoHeads = 0;
+    private int numTwoTails = 0;
+    private int numHeadsTails = 0;
+    private int numTrials = 0;
     /**
         Creates a coin toss simulator with no trials done yet.
     */
@@ -42,9 +42,9 @@ public class CoinTossSimulator {
         
         @param numTrials  number of trials to for simulation; must be >= 1
     */
-    int numTrials = 0;
+
     public void run(int numTrials) {
-        this.numTrials = numTrials;
+        this.numTrials += numTrials;
 
         for (int i = 0; i < numTrials; i++)
         {
@@ -58,7 +58,7 @@ public class CoinTossSimulator {
             else if (coinTossA == 1 && coinTossB == 1)
                 this.numTwoTails++;
             else
-                this.numHeadTails++;
+                this.numHeadsTails++;
         } 
     }
 
@@ -91,7 +91,7 @@ public class CoinTossSimulator {
         Get number of trials that came up one head and one tail since last reset.
     */
     public int getHeadTails() {
-        return this.numHeadTails; // DUMMY CODE TO GET IT TO COMPILE
+        return this.numHeadsTails; // DUMMY CODE TO GET IT TO COMPILE
     }
 
 
@@ -99,7 +99,10 @@ public class CoinTossSimulator {
         Resets the simulation, so that subsequent runs start from 0 trials done.
     */
     public void reset() {
-
+        this.numTrials = 0;
+        this.numTwoHeads = 0;
+        this.numTwoTails = 0;
+        this.numHeadsTails = 0;
     }
 
     public boolean tossesAdd()
