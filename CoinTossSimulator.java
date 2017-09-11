@@ -19,82 +19,99 @@
  */
 
  import java.util.Scanner;
+ import java.util.Random;
 
 public class CoinTossSimulator {
 
+    // member variables
+    private int numTwoHeads;
+    private int numTwoTails;
+    private int numHeadTails;
+
+    /**
+        Creates a coin toss simulator with no trials done yet.
+    */
+    public CoinTossSimulator() {
+
+    }
 
 
-   /**
-      Creates a coin toss simulator with no trials done yet.
-   */
-   public CoinTossSimulator() {
-
-   }
-
-
-   /**
-      Runs the simulation for numTrials more trials. Multiple calls to this method
-      without a reset() between them *add* these trials to the current simulation.
-      
-      @param numTrials  number of trials to for simulation; must be >= 1
+    /**
+        Runs the simulation for numTrials more trials. Multiple calls to this method
+        without a reset() between them *add* these trials to the current simulation.
+        
+        @param numTrials  number of trials to for simulation; must be >= 1
     */
     int numTrials = 0;
-   public void run(int numTrials) {
-    //    Scanner in = new Scanner(System.in);
+    public void run(int numTrials) {
+        this.numTrials = numTrials;
 
-    //    System.out.print("Enter number of trials: ");
-    //    numTrials = in.nextInt();
-    //    this.numTrials = numTrials;
+        for (int i = 0; i < numTrials; i++)
+        {
+            Random rand = new Random();
 
-   }
-
-
-   /**
-      Get number of trials performed since last reset.
-   */
-   public int getNumTrials() {
-       return this.numTrials; // DUMMY CODE TO GET IT TO COMPILE
-   }
-
-
-   /**
-      Get number of trials that came up two heads since last reset.
-   */
-   public int getTwoHeads() {
-       return 0; // DUMMY CODE TO GET IT TO COMPILE
-   }
+            int coinTossA = rand.nextInt(2);
+            int coinTossB = rand.nextInt(2);
+            
+            if (coinTossA == 0 && coinTossB == 0)
+                this.numTwoHeads++;
+            else if (coinTossA == 1 && coinTossB == 1)
+                this.numTwoTails++;
+            else
+                this.numHeadTails++;
+        } 
+    }
 
 
-   /**
-     Get number of trials that came up two tails since last reset.
-   */  
-   public int getTwoTails() {
-       return 0; // DUMMY CODE TO GET IT TO COMPILE
-   }
-
-
-   /**
-     Get number of trials that came up one head and one tail since last reset.
-   */
-   public int getHeadTails() {
-       return 0; // DUMMY CODE TO GET IT TO COMPILE
-   }
-
-
-   /**
-      Resets the simulation, so that subsequent runs start from 0 trials done.
+    /**
+        Get number of trials performed since last reset.
     */
-   public void reset() {
+    public int getNumTrials() {
+        return this.numTrials; // DUMMY CODE TO GET IT TO COMPILE
+    }
 
-   }
 
-   public boolean tossesAdd()
-   {
-       if(this.getTwoHeads() + this.getTwoTails() + this.getHeadTails() == this.getNumTrials())
-       {
-           return true;
-       }
-       else return false;
-   }
+    /**
+        Get number of trials that came up two heads since last reset.
+    */
+    public int getTwoHeads() {
+        return this.numTwoHeads; // DUMMY CODE TO GET IT TO COMPILE
+    }
 
+
+    /**
+        Get number of trials that came up two tails since last reset.
+    */  
+    public int getTwoTails() {
+        return this.numTwoTails; // DUMMY CODE TO GET IT TO COMPILE
+    }
+
+
+    /**
+        Get number of trials that came up one head and one tail since last reset.
+    */
+    public int getHeadTails() {
+        return this.numHeadTails; // DUMMY CODE TO GET IT TO COMPILE
+    }
+
+
+    /**
+        Resets the simulation, so that subsequent runs start from 0 trials done.
+    */
+    public void reset() {
+
+    }
+
+    public boolean tossesAdd()
+    {
+        // DEBUG
+        // System.out.print("tossesAdd total trial count: ");
+        // System.out.println(this.getTwoHeads() + this.getTwoTails() + this.getHeadTails());
+        
+        if(this.getTwoHeads() + this.getTwoTails() + this.getHeadTails() == this.getNumTrials())
+        {
+            return true;
+        }
+        else return false;
+    }
 }

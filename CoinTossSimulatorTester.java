@@ -23,6 +23,7 @@ public class CoinTossSimulatorTester
         System.out.println();
 
         // test 1
+        sim.run(1);
         System.out.print("After Run(1):");
         System.out.println();
         System.out.print("Number of Trials: ");
