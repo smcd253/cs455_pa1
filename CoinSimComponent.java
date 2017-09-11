@@ -9,6 +9,6 @@ public class CoinSimComponent extends JComponent
 //       Graphics2D g2 = (Graphics2D) g;
 //       Bar _bar = new Bar(getWidth(), getHeight());
 //       graph.draw(g2);
-//    }        //
+//    }
 
 }

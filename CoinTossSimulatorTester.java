@@ -105,7 +105,6 @@ public class CoinTossSimulatorTester
         System.out.println();
 
         // test bar graph
-        //System.out.println();
         
 
     }

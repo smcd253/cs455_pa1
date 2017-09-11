@@ -114,7 +114,6 @@ public class CoinTossSimulator {
         // DEBUG
         // System.out.print("tossesAdd total trial count: ");
         // System.out.println(this.getTwoHeads() + this.getTwoTails() + this.getHeadTails());
-                //
 
         if(this.getTwoHeads() + this.getTwoTails() + this.getHeadTails() == this.getNumTrials())
         {

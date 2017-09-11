@@ -93,7 +93,7 @@ public class Bar {
         //     g2.draw(bar);
 
         //     xleft = xright;
-        // }        //
+        // } 
 
     }
 }
