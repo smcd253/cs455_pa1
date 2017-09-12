@@ -56,7 +56,8 @@ public class Bar {
            this.scale = scale;
            this.color = color;
            this.label = label;             
-           this.data = new ArrayList<double>();         
+           this.data = new ArrayList<double>();
+           // ayush is a fag         
     }
    
    // add value to bar data set
