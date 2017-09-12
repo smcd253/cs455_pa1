@@ -34,6 +34,7 @@ public class Bar {
     private Color color;
     private String label;
     private Double[] data;
+    private int writeSpot;
     private int SIZE = 4096;
 
    /**
@@ -58,18 +59,16 @@ public class Bar {
            this.scale = scale;
            this.color = color;
            this.label = label;             
-<<<<<<< HEAD
-           this.data = new ArrayList<double>();      
-=======
-           this.data = new Double[SIZE];         
->>>>>>> 5599af71b37aa2e5b6e6d89127a76b0482a41772
+           this.data = new Double[SIZE];
+           this.writeSpot = 0;         
     }
    
-   // add value to bar data set
-//    public void addToBarData(double in)
-//    {
-//        this.data.add(in);
-//    }
+   //add value to bar data set
+   public void addToBarData(double in)
+   {
+       Array.set(this.data,this.writeSpot, in);
+       this.writeSpot++;
+   }
    /**
       Draw the labeled bar. 
       @param g2  the graphics context
@@ -80,7 +79,7 @@ public class Bar {
 
         for (Double findMax : this.data)
             if(max < findMax)
-            max = findMax;
+                max = findMax;
 
         int xwidth = this.width - 1;
         int yheight = this.barHeight - 1;
