@@ -10,6 +10,7 @@ import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import java.awt.font.FontRenderContext;
 import java.awt.geom.Rectangle2D;
+import java.lang.reflect.Array;
 
 /**
  * Bar class
@@ -32,7 +33,8 @@ public class Bar {
     private double scale;
     private Color color;
     private String label;
-    private ArrayList<double> data;
+    private Double[] data;
+    private int SIZE = 4096;
 
    /**
       Creates a labeled bar.  You give the height of the bar in application
@@ -56,8 +58,11 @@ public class Bar {
            this.scale = scale;
            this.color = color;
            this.label = label;             
-           this.data = new ArrayList<double>();
-           // ayush is a fag         
+<<<<<<< HEAD
+           this.data = new ArrayList<double>();      
+=======
+           this.data = new Double[SIZE];         
+>>>>>>> 5599af71b37aa2e5b6e6d89127a76b0482a41772
     }
    
    // add value to bar data set
@@ -70,31 +75,30 @@ public class Bar {
       @param g2  the graphics context
    */
     public void draw(Graphics2D g2) {
-        // int i = 0;
-        // double max = 0;
+        int i = 0;
+        double max = 0;
 
-        // for (Double findMax : this.data)
-        //     if(max < findMax)
-        //     max = findMax;
+        for (Double findMax : this.data)
+            if(max < findMax)
+            max = findMax;
 
-        // int xwidth = width - 1;
-        // int yheight = height - 1;
+        int xwidth = this.width - 1;
+        int yheight = this.barHeight - 1;
 
-        // int xleft = 0;
+        int xleft = 0;
+        int dataSize = Array.getLength(data);
 
-        // for (i = 0; i < this.data.size(); i++)
-        // {
-        //     int xright = xwidth * (i + 1) / this.data.size();
-        //     int barWidth = xwidth / this.data.size();
-        //     int barHeight = (int) Math.round(yheight * this.data.get(i) / max);
+        for (i = 0; i < dataSize; i++)
+        {
+            int xright = xwidth * (i + 1) / dataSize;
+            int barWidth = xwidth / dataSize;
+            int barHeight = (int) Math.round(yheight * data[i] / max);
 
-        //     Rectangle bar =
-        //     new Rectangle(xleft, yheight - barHeight,
-        //         barWidth, barHeight);
-        //     g2.draw(bar);
+            Rectangle bar = new Rectangle(xleft, yheight - barHeight, barWidth, barHeight);
+            g2.draw(bar);
 
-        //     xleft = xright;
-        // } 
+            xleft = xright;
+        } 
 
     }
 }
