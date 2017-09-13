@@ -33,9 +33,6 @@ public class Bar {
     private double scale;
     private Color color;
     private String label;
-    private Double[] data;
-    private int writeSpot;
-    private int SIZE = 4096;
 
    /**
       Creates a labeled bar.  You give the height of the bar in application
@@ -58,46 +55,23 @@ public class Bar {
            this.barHeight = barHeight;
            this.scale = scale;
            this.color = color;
-           this.label = label;             
-           this.data = new Double[SIZE];
-           this.writeSpot = 0;         
+           this.label = label;                    
     }
-   
-   //add value to bar data set
-   public void addToBarData(double in)
-   {
-       Array.set(this.data,this.writeSpot, in);
-       this.writeSpot++;
-   }
+    public int getWidth()
+    {
+        return this.width;
+    }
    /**
       Draw the labeled bar. 
       @param g2  the graphics context
    */
     public void draw(Graphics2D g2) {
-        int i = 0;
-        double max = 0;
+        Rectangle bar = new Rectangle(this.left, this.bottom, this.width, this.barHeight);
 
-        for (Double findMax : this.data)
-            if(max < findMax)
-                max = findMax;
+        g2.draw(bar);
+        g2.setColor(this.color);
+        g2.fill(bar);
 
-        int xwidth = this.width - 1;
-        int yheight = this.barHeight - 1;
-
-        int xleft = 0;
-        int dataSize = Array.getLength(data);
-
-        for (i = 0; i < dataSize; i++)
-        {
-            int xright = xwidth * (i + 1) / dataSize;
-            int barWidth = xwidth / dataSize;
-            int barHeight = (int) Math.round(yheight * data[i] / max);
-
-            Rectangle bar = new Rectangle(xleft, yheight - barHeight, barWidth, barHeight);
-            g2.draw(bar);
-
-            xleft = xright;
-        } 
-
+        g2.drawString(this.label, this.left, this.bottom);
     }
 }
