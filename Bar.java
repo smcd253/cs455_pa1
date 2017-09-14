@@ -33,6 +33,9 @@ public class Bar {
     private double scale;
     private Color color;
     private String label;
+    private int barTop;
+    private int labelWidth;
+    private int labelHeight;
 
    /**
       Creates a labeled bar.  You give the height of the bar in application
@@ -52,26 +55,33 @@ public class Bar {
            this.bottom = bottom;
            this.left = left;
            this.width = width;
-           this.barHeight = barHeight;
+           this.barHeight = barHeight * (int)scale;
            this.scale = scale;
            this.color = color;
            this.label = label;                    
     }
-    public int getWidth()
-    {
-        return this.width;
-    }
+
    /**
       Draw the labeled bar. 
       @param g2  the graphics context
    */
-    public void draw(Graphics2D g2) {
-        Rectangle bar = new Rectangle(this.left, this.bottom, this.width, this.barHeight);
+    public void draw(Graphics2D g2) 
+    {
+        Font font = g2.getFont();
+        FontRenderContext context = g2.getFontRenderContext();
+        
+        Rectangle2D labelBounds = font.getStringBounds(this.label, context);
+        this.labelWidth = (int)labelBounds.getWidth();
+        this.labelHeight = (int)labelBounds.getHeight();
+
+        this.barTop = this.bottom - this.barHeight;
+        Rectangle bar = new Rectangle(this.left, this.barTop, this.width, this.barHeight);
 
         g2.draw(bar);
         g2.setColor(this.color);
         g2.fill(bar);
 
-        g2.drawString(this.label, this.left, this.bottom);
+        g2.setColor(Color.BLACK);
+        g2.drawString(this.label, this.left - this.labelWidth/2, this.bottom + this.labelHeight);
     }
 }

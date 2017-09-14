@@ -1,14 +1,18 @@
 import javax.swing.JFrame;
+import java.util.Scanner;
 
 public class CoinSimViewer
 {
    public static void main(String[] args)
    {
+        System.out.print("Enter number of trials: ");
+        Scanner scan = new Scanner(System.in);
+        int numRuns = scan.nextInt();
 
         // run simulation
         CoinTossSimulator sim = new CoinTossSimulator();
-        sim.run(200);
-        System.out.print("After Run(200):");
+        sim.run(numRuns);
+        System.out.print("After Run(" + numRuns + "): ");
         System.out.println();
         System.out.print("Number of Trials [exp: 1] ");
         System.out.println(sim.getNumTrials());
@@ -24,8 +28,8 @@ public class CoinSimViewer
 
         JFrame frame = new JFrame();
 
-        int FRAME_WIDTH = 300;
-        int FRAME_HEIGHT = 400;
+        int FRAME_WIDTH = 800;
+        int FRAME_HEIGHT = 500;
 
         frame.setSize(FRAME_WIDTH, FRAME_HEIGHT);
         frame.setTitle("Coin Toss Sim");

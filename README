@@ -35,7 +35,7 @@ CoinSimViewer.java
    10: final int FRAME_HEIGHT = 400;
 
    11: frame.setSize(FRAME_WIDTH, FRAME_HEIGHT);
-   12: frame.setTitle("BarChart");
+   12: frame.setTitle("Coin Toss Sim");
    13: frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
    15: CoinSimComponent component = new CoinSimComponent();
@@ -44,9 +44,11 @@ CoinSimViewer.java
    19: frame.setVisible(true);
 
    Source: Big Java Early Objects, 6th ed., Section 2.9.1
+
 ----------------------------------------------
 KNOWN BUGS or LIMITATIONS:
-
+- bars have no height after 400 Trials
+- bars resize to no height under a certain size
 
 
 ----------------------------------------------
@@ -57,10 +59,14 @@ ANY OTHER NOTES FOR THE GRADER:
 ----------------------------------------------
 ANSWERS TO ASSIGNMENT README QUESTIONS (if applicable):
 
+1) 
+- Prob Two Heads: 1/4
+- Prob Two Tails: 1/4
+- Prob Head Tails: 1/2
 
-Incremental Development Plan of Attack
+2) 350
 
-Step 1: Create & compile CoinTossSimulatorTester.java
-
-Step 2:              
+3) 
+- Most Trials w/o overflow: 2.1 * 10^9
+- Trials w/ overflow: 2.2 * 10^9         
 
